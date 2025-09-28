@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Grow Salt - Groq AI Chat</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- 120Hz Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/icons/icon-192.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-pulse"></div>
+                    <h1>Grow Salt AI</h1>
+                </div>
+                <button id="menuBtn" class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Side Menu -->
+        <div id="sideMenu" class="side-menu">
+            <div class="menu-header">
+                <h2>Settings</h2>
+                <button id="closeMenu" class="close-menu">×</button>
+            </div>
+            <div class="menu-content">
+                <div class="model-selector">
+                    <label>AI Model:</label>
+                    <select id="modelSelect">
+                        <option value="mixtral-8x7b-32768">Mixtral 8x7B</option>
+                        <option value="llama3-70b-8192">Llama 3 70B</option>
+                        <option value="llama3-8b-8192">Llama 3 8B</option>
+                        <option value="gemma-7b-it">Gemma 7B</option>
+                    </select>
+                </div>
+                <button id="clearChat" class="clear-btn">Clear Chat</button>
+                <button id="exportChat" class="export-btn">Export Chat</button>
+                <div class="theme-toggle">
+                    <label>Dark Mode</label>
+                    <input type="checkbox" id="themeToggle" checked>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <main class="chat-container" id="chatContainer">
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="welcome-icon">🚀</div>
+                <h2>Welcome to Grow Salt AI</h2>
+                <p>Powered by Groq's Lightning-Fast LPU™</p>
+                <div class="suggested-prompts">
+                    <button class="prompt-chip" data-prompt="Explain quantum computing in simple terms">
+                        💡 Quantum Computing
+                    </button>
+                    <button class="prompt-chip" data-prompt="Write a Python script for web scraping">
+                        🐍 Python Script
+                    </button>
+                    <button class="prompt-chip" data-prompt="Create a healthy meal plan for a week">
+                        🥗 Meal Plan
+                    </button>
+                    <button class="prompt-chip" data-prompt="Explain the theory of relativity">
+                        🌌 Relativity
+                    </button>
+                </div>
+            </div>
+            <div id="messages" class="messages"></div>
+        </main>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-container">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Type your message..." 
+                    rows="1"
+                    maxlength="4000"></textarea>
+                <button id="sendBtn" class="send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-info">
+                <span id="charCount">0 / 4000</span>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+                          </html>
