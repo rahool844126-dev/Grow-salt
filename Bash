@@ -1,0 +1,6 @@
+git mv src/index.html .
+git mv src/app.js .
+git mv src/styles.css .
+git mv src/service-worker.js .
+git commit -m "Move static files to root for Vercel"
+git push
