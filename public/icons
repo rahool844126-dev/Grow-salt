@@ -1,6 +1,0 @@
-# In your repo directory
-mkdir -p public/icons
-# Add your icon-192.png and icon-512.png to public/icons/ folder
-git add public/icons/
-git commit -m "Add PWA icons"
-git push
